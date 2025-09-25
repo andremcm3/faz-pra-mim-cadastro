@@ -37,9 +37,9 @@ const Index = () => {
               size="lg" 
               variant="outline"
               className="btn-outline-brand text-lg"
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/search")}
             >
-              Já tenho conta
+              Buscar Prestadores
             </Button>
           </div>
         </div>

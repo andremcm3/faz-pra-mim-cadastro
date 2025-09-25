@@ -23,6 +23,13 @@ const Header = () => {
         <nav className="flex items-center space-x-4">
           <Button 
             variant="ghost" 
+            onClick={() => navigate("/search")}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Buscar Prestadores
+          </Button>
+          <Button 
+            variant="ghost" 
             onClick={() => navigate("/login")}
             className="text-muted-foreground hover:text-foreground"
           >
