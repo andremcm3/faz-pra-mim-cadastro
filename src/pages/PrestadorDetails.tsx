@@ -83,7 +83,6 @@ const PrestadorDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [isRequesting, setIsRequesting] = useState(false);
   
   const prestador = mockPrestadorDetails[id as keyof typeof mockPrestadorDetails];
 
@@ -113,32 +112,8 @@ const PrestadorDetails = () => {
     ));
   };
 
-  const handleSolicitarServico = async () => {
-    setIsRequesting(true);
-    
-    try {
-      // Simular API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Solicitação enviada!",
-        description: "O prestador receberá sua solicitação em breve.",
-      });
-
-      // Simular redirecionamento para chat
-      setTimeout(() => {
-        navigate("/chat/1");
-      }, 1500);
-
-    } catch (error) {
-      toast({
-        title: "Erro ao enviar solicitação",
-        description: "Tente novamente em alguns minutos.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsRequesting(false);
-    }
+  const handleSolicitarServico = () => {
+    navigate(`/solicitar-servico/${id}`);
   };
 
   return (
@@ -193,10 +168,9 @@ const PrestadorDetails = () => {
                     <Button 
                       size="lg" 
                       onClick={handleSolicitarServico}
-                      disabled={isRequesting}
                       className="bg-accent hover:bg-accent-hover"
                     >
-                      {isRequesting ? "Enviando..." : "Solicitar Serviço"}
+                      Solicitar Serviço
                     </Button>
                     <Button 
                       size="lg" 
