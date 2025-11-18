@@ -30,6 +30,13 @@ const Header = () => {
           </Button>
           <Button 
             variant="ghost" 
+            onClick={() => navigate("/perfil-prestador")}
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Meu Perfil
+          </Button>
+          <Button 
+            variant="ghost" 
             onClick={() => navigate("/login")}
             className="text-muted-foreground hover:text-foreground"
           >
